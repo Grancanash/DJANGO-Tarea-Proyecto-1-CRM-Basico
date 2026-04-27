@@ -3,7 +3,7 @@
 Este es un **CRM Básico** desarrollado como proyecto para la formación en **ConquerBlocks**. Es una aplicación Full Stack que utiliza **Django** para el backend y **React** para el frontend, diseñada para gestionar clientes, empresas e interacciones comerciales de forma eficiente.
 
 ## 🔗 Demo En Vivo
-Puedes probar la aplicación aquí: <a href="https://crm.grancanash.es" target="_blank" rel="noopener noreferrer">https://crm.grancanash.es</a>
+Puedes probar la aplicación aquí: [https://crm.grancanash.es](https://crm.grancanash.es)  
 *Los datos se resetean automáticamente cada día a las 07:00 AM (España).*
 
 ### 🔑 Credenciales para la Demo:
