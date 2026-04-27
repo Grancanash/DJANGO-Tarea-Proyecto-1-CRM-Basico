@@ -1,4 +1,4 @@
-# 🚀 BASIC_CRM - Sistema de Gestión Comercial
+# 🚀 CRM BÁSICO - Sistema de Gestión Comercial
 
 Este es un **CRM Básico** desarrollado como proyecto para la formación en **ConquerBlocks**. Es una aplicación Full Stack que utiliza **Django** para el backend y **React** para el frontend, diseñada para gestionar clientes, empresas e interacciones comerciales de forma eficiente.
 
@@ -39,15 +39,3 @@ Puedes probar la aplicación aquí: [https://crm.grancanash.es](https://crm.gran
 - ✅ **Dashboard Estadístico**: Gráficos de distribución de cartera y resumen de trabajo diario.
 - ✅ **Exportación de Datos**: Generación y descarga de archivos CSV.
 - ✅ **Seguridad**: Filtrado de datos por Agente comercial y acceso restringido mediante JWT.
-
----
-
-## 🏗️ Instalación y despliegue
-
-Si tienes Docker instalado, puedes levantar el proyecto completo con un solo comando:
-
-1. Clona el repositorio.
-2. Crea un archivo `.env` basado en el código de configuración.
-3. Ejecuta:
-   ```bash
-   docker compose up -d --build
