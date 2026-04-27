@@ -1,0 +1,40 @@
+services:
+    db:
+        image: postgres:15-alpine
+        volumes:
+            - postgres_data:/var/lib/postgresql/data
+        environment:
+            - POSTGRES_DB=${DB_NAME}
+            - POSTGRES_USER=${DB_USER}
+            - POSTGRES_PASSWORD=${DB_PASSWORD}
+        restart: always
+
+    backend:
+        build: ./backend
+        command: >
+            sh -c "python manage.py migrate &&
+                   python manage.py collectstatic --noinput &&
+                   gunicorn core.wsgi:application --bind 0.0.0.0:8000"
+        volumes:
+            - ./backend:/app
+            - django_static:/app/staticfiles # Carpeta donde Django guardará los CSS
+        environment:
+            - DJANGO_DEBUG=${DJANGO_DEBUG}
+            - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}
+            - DATABASE_URL=postgres://${DB_USER}:${DB_PASSWORD}@db:${DB_PORT}/${DB_NAME}
+            - DJANGO_SETTINGS_MODULE=core.settings
+        depends_on:
+            - db
+
+    frontend:
+        build: ./frontend
+        ports:
+            - "8090:80" # Puerto 8090 para evitar conflictos
+        volumes:
+            - django_static:/app/django_static # Nginx leerá de aquí
+        depends_on:
+            - backend
+
+volumes:
+    postgres_data:
+    django_static:
