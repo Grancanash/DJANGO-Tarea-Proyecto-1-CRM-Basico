@@ -1,3 +1,5 @@
+<img src="./docs/hero_crm.jpg" width="100%" alt="BASIC CRM Hero Header">
+
 # 🚀 CRM BÁSICO - Sistema de Gestión Comercial
 
 Este es un **CRM Básico** desarrollado como proyecto para la formación en **ConquerBlocks**. Es una aplicación Full Stack que utiliza **Django** para el backend y **React** para el frontend, diseñada para gestionar clientes, empresas e interacciones comerciales de forma eficiente.
